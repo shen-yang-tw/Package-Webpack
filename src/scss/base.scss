@@ -1,0 +1,6 @@
+@import "~uikit/dist/css/uikit.min.css"; //'~' means this project root
+/* purgecss start ignore */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+/* purgecss end ignore */
+@import "tailwindcss/utilities";

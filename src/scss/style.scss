@@ -1,0 +1,70 @@
+@import 'variables', 'colors-variables', 'color', 'mixin', 'functions';
+
+.logo_bg {
+  background: url('../img/logo.svg#svgView(preserveAspectRatio(xMinYMid))') left center no-repeat;
+}
+
+header>nav {
+  background-color: $color-grey-200 !important;
+}
+
+footer .logo_bg {
+  background: url('../img/logo.svg#svgView(preserveAspectRatio(xMinYMin))') left center no-repeat;
+}
+
+#footer {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: calc(100% * 510 / 1920); /* background photo Aspect Ratio: 408x1921 */
+    background: url("../img/blank.gif") left top no-repeat;
+    background-size: 100%;
+  }
+  >:first-child {background-color: $color4;}
+}
+#footer, footer {
+  background-color: transparent;
+  &, *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]), *:not([class*=bg]):not([class*=btn]):not([class*=color_]):not([class*=text-]) *:not([class*=bg]) {color: text-color($color4) !important;}
+  *, #{$uk-grid-divider}>:not(#{$uk-uk-first-column})::before, &#{$uk-grid-divider}#{$uk-grid-stack}>#{$uk-grid-margin}::before {border-color: text-color($color4);}
+}
+
+// #slideshow .uk-slideshow-items {
+//   min-height: auto !important;
+// }
+
+@media (min-width: 1200px) {
+  $h: 70px;
+
+  .logo_position-up .logo_bg {
+    margin-top: 0;
+  }
+
+  .logo_control .logo_text_control .logo_position-up,
+  .logo_control .logo_text_control .logo_position-up .logo_text .logo_bg {
+    min-height: $h
+  }
+
+  .logo_control .logo_text_control .logo_position-up .logo_text .logo_bg {
+    width: calc(#{$h}*1.96);
+    max-width: inherit;
+    max-height: inherit;
+  }
+  .logo_eng {
+    font-size: 0.87rem !important;
+  }
+}
+
+@media (min-width: 1500px) {
+  body::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 168px;
+    height: 171px;
+    background: url('../img/blank.gif') no-repeat left top;
+    background-size: contain;
+    left: 50px;
+    top: 20px;
+  }
+}
